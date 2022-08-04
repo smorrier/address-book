@@ -1,10 +1,10 @@
-steps:
-- name: node:14
-  entrypoint: npm
-  args: ["install"]
-- name: node:14
-  entrypoint: npm
-  args: ["run", "build"]
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
-timeout: "1600s"
+runtime: nodejs14
+handlers:
+  # Serve all static files with urls ending with a file extension
+- url: /(.*\..+)$ 
+  static_files: build/\1
+  upload: build/(.*\..+)$
+  # catch all handler to index.html
+- url: /.*
+  static_files: build/index.html
+  upload: build/index.html
