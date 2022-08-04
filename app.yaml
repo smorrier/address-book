@@ -1,10 +1,8 @@
-runtime: nodejs14
-
 steps:
-- name: install
+- name: node:14
   entrypoint: npm
   args: ["install"]
-- name: build
+- name: node:14
   entrypoint: npm
   args: ["run", "build"]
 - name: "gcr.io/cloud-builders/gcloud"
