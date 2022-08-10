@@ -44,3 +44,30 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Summary of Assignment
+
+My overall approach
+
+I created a contact context to make the api, contacts and more available to the entire app. This context could have set to specific routes if more pages (that had no relevance to contacts) were implemented. I implemented a screen size context (created on a previous project), which allowed me to have a responsive display without the need to media queries. I used styled-components because it removes the use of class names and their issues (duplication, overlap, typos).
+
+What features did I implemented
+
+- Contacts Context
+- Responsive UI
+- React Router
+- Parallel sliced api calls
+- GCP deployments
+
+Given more time, what else would I have liked to complete and how long it would have taken me?
+
+- Improve test coverage: I would have liked improved test coverage of my app. I would have liked to tested my api calls to ensure they were called at appropriate times and the right amount of times (especially for concurrent request). Overall I think it would take me 2-3 hours
+- Prettier UI (more color, more reponsive spacing): 30 minutes
+- Ability to change page size and slice size via the UI: 45 minutes
+- Add a name/phone number search for loaded contacts in the contacts page: 15-30 minutes
+- Add a loading state to prevent more records from being requested why the previous ones are still loading: 15-30 minutes
+
+Given more time, what else would I have done to make the project more robust?
+
+- In the contacts page, I would have implemented pagination (limiting the number of contacts viewed per page). This would prevent performance issues with too many elements being rendered.
+- Improve API error handling. I liked to have re attempted failed requests since randomuser.me had frequent failing requests
