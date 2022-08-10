@@ -8,7 +8,7 @@ export interface IContact {
 		first: string;
 		last: string;
 		title: string;
-	}
+	};
 	phone: string;
 	picture: {
 		large: string;
@@ -22,29 +22,29 @@ export interface IFullContact extends IContact {
 	dob: {
 		age: number;
 		date: string;
-	},
+	};
 	gender: string;
 	location: {
 		city: string;
 		coordinates: {
 			latitude: string;
-			longitude: string
-		},
+			longitude: string;
+		};
 		country: string;
 		postcode: number | string;
 		state: string;
 		street: {
 			name: string;
 			number: number;
-		},
+		};
 		timezone: {
 			description: string;
 			ofset: string;
-		}
+		};
 	};
 	nat: string;
 	registered: {
 		age: number;
 		date: string;
-	}
+	};
 }

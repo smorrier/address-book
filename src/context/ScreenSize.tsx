@@ -6,19 +6,25 @@ import React, {
 	ReactNode,
 } from "react";
 
-const ScreenSizeContext = createContext({ screenSize: "desktop" });
+export enum screenSizes {
+	desktop = "desktop",
+	tablet = "tablet",
+	mobile = "mobile",
+}
+
+const ScreenSizeContext = createContext({ screenSize: screenSizes.desktop });
 
 export function ScreenSizeProvider({ children }: { children: ReactNode }) {
-	const [screenSize, setScreenSize] = useState("desktop");
+	const [screenSize, setScreenSize] = useState(screenSizes.desktop);
 
 	useEffect(() => {
 		function getScreenSize(w: number) {
 			if (w > 1200) {
-				return "desktop";
+				return screenSizes.desktop;
 			} else if (w > 480) {
-				return "tablet";
+				return screenSizes.tablet;
 			} else {
-				return "mobile";
+				return screenSizes.mobile;
 			}
 		}
 

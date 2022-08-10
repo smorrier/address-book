@@ -5,11 +5,11 @@ const axios = _axios.create({
 });
 
 axios.interceptors.request.use((config) => {
-	if(config.method === 'get') {
-		config.params.seed = 'foobar';
+	if (config.method === "get") {
+		config.params.seed = "testing_seed";
 	}
 
 	return config;
-})
+});
 
-export default axios
+export default axios;
