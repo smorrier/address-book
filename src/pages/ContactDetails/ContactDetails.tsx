@@ -38,14 +38,10 @@ const ContactDetails = (): ReactElement | null => {
 		];
 	}, [contact]);
 
-	if (!contact) {
-		return null;
-	}
-
 	return (
 		<Container>
 			<Title>Contact Details</Title>
-			{Boolean(contact) && (
+			{contact && (
 				<>
 					<Header>
 						<UserImage src={contact.picture.large} size={screenSize} />
